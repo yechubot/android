@@ -1,45 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="30dp"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="안녕하세요" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="나는 버튼1"
+        android:textColor="#0000ff"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="나는 버튼2"
+        android:textColor="#0000ff"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="show image" />
+
     <EditText
-        android:id="@+id/edtInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btnShow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="글자 나타내기"/>
-    <Button
-        android:id="@+id/btnHomeOpen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="홈페이지 열기"/>
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
-        <RadioButton
-            android:id="@+id/rdoDog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="강아지"/>
-        <RadioButton
-            android:id="@+id/idoCat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="고양이"/>
-    </RadioGroup>
+        android:hint="실명을 입력해주세요"
+        android:paddingLeft="20dp" />
+
     <ImageView
-        android:id="@+id/ivPet"
+        android:id="@+id/img"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:layout_height="wrap_content"/>
+
+
 </LinearLayout>
