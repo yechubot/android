@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/EditNum1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:hint="숫자를 입력해주세요"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/EditNum2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:hint="숫자를 입력해주세요"
+        android:inputType="number"/>
+
+        <Button
+            android:id="@+id/BtnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="더하기"
+            android:textSize="30sp"
+            android:layout_margin="20dp"/>
+        <Button
+            android:id="@+id/BtnSub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="빼기"
+            android:textSize="30sp"
+            android:layout_margin="20dp"/>
+        <Button
+            android:id="@+id/BtnMul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="곱하기"
+            android:textSize="30sp"
+            android:layout_margin="20dp"/>
+        <Button
+            android:id="@+id/BtnDiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="나누기"
+            android:textSize="30sp"
+            android:layout_margin="20dp"/>
+        <TextView
+            android:id="@+id/TextResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="30dp"
+            android:textColor="#ff0000"/>
+
+
+</LinearLayout>
