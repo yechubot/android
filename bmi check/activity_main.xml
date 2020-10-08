@@ -13,11 +13,8 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="키"
-            android:textSize="20sp" />
+            style="@style/MyTextView"/>
 
         <EditText
             android:id="@+id/heightInput"
@@ -35,11 +32,8 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="몸무게"
-            android:textSize="20sp" />
+            style="@style/MyTextView"/>
 
         <EditText
             android:id="@+id/weightInput"
@@ -61,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="클릭하면 결과가 뜹니다."
+        android:text="@string/result"
         android:textColor="#0000ff"
         android:textSize="20sp" />
 
