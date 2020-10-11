@@ -11,33 +11,34 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    TextView result;
-    Button btnAdd, btnSub, btnMul, btnDiv;
     EditText num1, num2;
-    int value1, value2;
+    Button btnAdd, btnSub, btnMul, btnDiv;
+    TextView result;
+    int value1 = Integer.parseInt(num1.getText().toString());
+    int value2 = Integer.parseInt(num2.getText().toString());
+    int FinalResult;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        result = (TextView) findViewById(R.id.TextResult);
+        num1 = (EditText) findViewById(R.id.EditNum1);
+        num2 = (EditText) findViewById(R.id.EditNum2);
         btnAdd = (Button) findViewById(R.id.BtnAdd);
         btnSub = (Button) findViewById(R.id.BtnSub);
         btnMul = (Button) findViewById(R.id.BtnMul);
         btnDiv = (Button) findViewById(R.id.BtnDiv);
-        num1 = (EditText) findViewById(R.id.EditNum1);
-        num2 = (EditText) findViewById(R.id.EditNum2);
+        result = (TextView) findViewById(R.id.TextResult);
+
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 try {
-
-                    value1 = Integer.parseInt(num1.getText().toString());
-                    value2 = Integer.parseInt(num2.getText().toString());
-                    int FinalResult = value1 + value2;
+                    FinalResult = value1 + value2;
                     result.setText("실행결과: " + FinalResult);
                 } catch (java.lang.NumberFormatException e) {
                     Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
@@ -49,9 +50,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    value1 = Integer.parseInt(num1.getText().toString());
-                    value2 = Integer.parseInt(num2.getText().toString());
-                    int FinalResult = value1 - value2;
+                    
+                     FinalResult = value1 - value2;
                     result.setText("실행결과: " + FinalResult);
                 } catch (java.lang.NumberFormatException e) {
                     Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
@@ -63,9 +63,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    value1 = Integer.parseInt(num1.getText().toString());
-                    value2 = Integer.parseInt(num2.getText().toString());
-                    int FinalResult = value1 * value2;
+                   
+                     FinalResult = value1 * value2;
                     result.setText("실행결과: " + FinalResult);
                 } catch (java.lang.NumberFormatException e) {
                     Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
@@ -77,9 +76,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    value1 = Integer.parseInt(num1.getText().toString());
-                    value2 = Integer.parseInt(num2.getText().toString());
-                    int FinalResult = value1 / value2;
+                   
+                     FinalResult = value1 / value2;
                     result.setText("실행결과: " + FinalResult);
                 } catch (java.lang.NumberFormatException e) {
                     Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
