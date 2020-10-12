@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
+// 아래 코드로 작성하면 버튼 클릭시 앱 종료됨... why why why 
                     if (dog.isChecked()) {
                         img.setImageResource(R.drawable.dog);
                     }
