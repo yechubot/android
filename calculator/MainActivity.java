@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActionBar bar = getSupportActionBar();
+        bar.setTitle("초간단 계산기");
+        bar.setDisplayShowHomeEnabled(true);
+        bar.setIcon(R.drawable.android);
 
         num1 = (EditText) findViewById(R.id.EditNum1);
         num2 = (EditText) findViewById(R.id.EditNum2);
