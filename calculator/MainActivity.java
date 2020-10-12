@@ -1,5 +1,6 @@
 package com.example.calculator;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -11,13 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    EditText num1, num2;
-    Button btnAdd, btnSub, btnMul, btnDiv;
     TextView result;
-    int value1 = Integer.parseInt(num1.getText().toString());
-    int value2 = Integer.parseInt(num2.getText().toString());
+    Button btnAdd, btnSub, btnMul, btnDiv;
+    EditText num1, num2;
     int FinalResult;
-    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,21 +25,21 @@ public class MainActivity extends AppCompatActivity {
         bar.setTitle("초간단 계산기");
         bar.setDisplayShowHomeEnabled(true);
         bar.setIcon(R.drawable.android);
-
-        num1 = (EditText) findViewById(R.id.EditNum1);
-        num2 = (EditText) findViewById(R.id.EditNum2);
+        result = (TextView) findViewById(R.id.TextResult);
         btnAdd = (Button) findViewById(R.id.BtnAdd);
         btnSub = (Button) findViewById(R.id.BtnSub);
         btnMul = (Button) findViewById(R.id.BtnMul);
         btnDiv = (Button) findViewById(R.id.BtnDiv);
-        result = (TextView) findViewById(R.id.TextResult);
-
+        num1 = (EditText) findViewById(R.id.EditNum1);
+        num2 = (EditText) findViewById(R.id.EditNum2);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 try {
+                    int value1 = Integer.parseInt(num1.getText().toString());
+                    int value2 = Integer.parseInt(num2.getText().toString());
                     FinalResult = value1 + value2;
                     result.setText("실행결과: " + FinalResult);
                 } catch (java.lang.NumberFormatException e) {
@@ -54,8 +52,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    
-                     FinalResult = value1 - value2;
+                    int value1 = Integer.parseInt(num1.getText().toString());
+                    int value2 = Integer.parseInt(num2.getText().toString());
+                    FinalResult = value1 - value2;
                     result.setText("실행결과: " + FinalResult);
                 } catch (java.lang.NumberFormatException e) {
                     Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
@@ -67,8 +66,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                   
-                     FinalResult = value1 * value2;
+                    int value1 = Integer.parseInt(num1.getText().toString());
+                    int value2 = Integer.parseInt(num2.getText().toString());
+                    FinalResult = value1 * value2;
                     result.setText("실행결과: " + FinalResult);
                 } catch (java.lang.NumberFormatException e) {
                     Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
@@ -80,12 +80,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                   
-                     FinalResult = value1 / value2;
+                    int value1 = Integer.parseInt(num1.getText().toString());
+                    int value2 = Integer.parseInt(num2.getText().toString());
+                    FinalResult = value1 / value2;
                     result.setText("실행결과: " + FinalResult);
                 } catch (java.lang.NumberFormatException e) {
                     Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
-                } catch(ArithmeticException e){
+                } catch (ArithmeticException e) {
                     result.setText("실행결과: " + 0);
                 }
                 ;
