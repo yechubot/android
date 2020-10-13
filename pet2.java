@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                if (dog.isChecked()) {
+                if (dog.isChecked()) {// 실행은 되는데 parameter가 checkedId니까 checkedId==R.id.dog 이런식으로 하니까 됨. 이렇게 하는게 맞는 듯??
                     img.setImageResource(R.drawable.dog);
                 }
                 if (cat.isChecked()) {
