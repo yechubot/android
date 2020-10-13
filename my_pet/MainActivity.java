@@ -61,10 +61,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if (rabbit.isChecked()) {
                         img.setImageResource(R.drawable.rabbit);
-                    }
-
-
+                    }else { // 암것도 안눌렀을 때 토스트 
+                    Toast.makeText(getApplicationContext(),"click one", Toast.LENGTH_SHORT).show();
+                }
+                
             }
+
         });
 
     }
