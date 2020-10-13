@@ -49,7 +49,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-// 아래 코드로 작성하면 버튼 클릭시 앱 종료됨... why why why 
+/*
+내 코드.... 에뮬레이터로 잘 나옴 태블릿도 잘 나옴
+(맥북에어.. 호환 문제..?)
+*/
                     if (dog.isChecked()) {
                         img.setImageResource(R.drawable.dog);
                     }
