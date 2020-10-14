@@ -1,4 +1,4 @@
-package com.example.tablecalculator;
+package com.example.table;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,63 +11,59 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    EditText etInput1, etInput2;
-    Button[] numButtons = new Button[10];
-    int numButtonsIDs[]={R.id.Num0, R.id.Num1, R.id.Num2, R.id.Num3, R.id.Num4,
-            R.id.Num5, R.id.Num6, R.id.Num7, R.id.Num8, R.id.Num9};
-    Button btnAdd, btnSub, btnMul, btnDiv;
-    TextView textResult;
-    String stringNum1, stringNum2;
-    int result, i;
+    EditText edt1, edt2;
+    Button btn[] = new Button[10];
+    int btnId[] = {R.id.num0, R.id.num1, R.id.num2, R.id.num3, R.id.num4, R.id.num5, R.id.num6, R.id.num7, R.id.num8, R.id.num9};
+    Button plus, minus, mul, divide;
+    TextView result;
+    int finalResult;
+   String stNum1, stNum2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        etInput1=(EditText)findViewById(R.id.etInput1);
-        etInput2=(EditText)findViewById(R.id.etInput2);
-        for(int i =0; i<numButtons.length; i++){
-            numButtons[i]=(Button)findViewById(numButtonsIDs[i]);
+        edt1 = (EditText) findViewById(R.id.edt1);
+        edt2 = (EditText) findViewById(R.id.edt2);
+        plus = (Button) findViewById(R.id.plus);
+        minus = (Button) findViewById(R.id.minus);
+        mul = (Button) findViewById(R.id.mul);
+        divide = (Button) findViewById(R.id.divide);
+        for (int i = 0; i < btn.length; i++) {
+            btn[i] = (Button) findViewById(btnId[i]);
         }
-        btnAdd=(Button)findViewById(R.id.btnAdd);
-        btnSub=(Button)findViewById(R.id.btnSub);
-        btnMul=(Button)findViewById(R.id.btnMul);
-        btnDiv=(Button)findViewById(R.id.btnDiv);
-        textResult=(TextView)findViewById(R.id.textResult);
 
-        for(int i=0; i<numButtons.length; i++){
+        for(int i=0; i<btn.length; i++){
             final int index;
-            index=i;
-            numButtons[index].setOnClickListener(new View.OnClickListener() {
+            index = i;
+            btn[index].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(etInput1.isFocused()==true){
-                        stringNum1 =etInput1.getText().toString()+numButtons[index].getText().toString();
-                        etInput1.setText(stringNum1);
-                    }else if(etInput2.isFocused()==true){
-                        stringNum2 =etInput2.getText().toString()+numButtons[index].getText().toString();
-                        etInput2.setText(stringNum2);
+                    if(edt1.isFocused()){
+                        stNum1 = edt1.getText().toString()+btn[index].getText().toString();
+                        edt1.setText(stNum1);
+                    }else if(edt2.isFocused()){
+                        stNum2 = edt2.getText().toString()+btn[index].getText().toString();
+                        edt2.setText(stNum2);
                     }else {
-                        Toast.makeText(getApplicationContext(),"입력창을 선택한 다음 숫자를 입력하세요", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "click input field to enter your numbers", Toast.LENGTH_SHORT).show();
                     }
+
                 }
             });
         }
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
+        plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stringNum1 = etInput1.getText().toString();
-                stringNum2 = etInput2.getText().toString();
-                result=Integer.parseInt(stringNum1)+Integer.parseInt(stringNum1);
+                stNum1 = edt1.getText().toString();
+                stNum2 = edt2.getText().toString();
+                finalResult = Integer.parseInt(stNum1)+Integer.parseInt(stNum2);
 
-                textResult.setText("계산 결과: "+result);
+                result.setText(result.getText().toString() +finalResult); //"result" + finalResult
             }
         });
-
-
-
-
 
 
     }
