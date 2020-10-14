@@ -1,114 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/etInput1"
-        android:hint="숫자를 입력하세요"
+        android:id="@+id/edt1"
+        android:hint="enter number"
         android:inputType="numberDecimal" />
 
     <EditText
-        android:id="@+id/etInput2"
-        android:hint="숫자를 입력하세요"
+        android:id="@+id/edt2"
+        android:hint="enter number"
         android:inputType="numberDecimal" />
 
     <TableRow>
 
         <Button
-            android:id="@+id/Num0"
-            android:layout_margin="5dp"
+            android:id="@+id/num0"
             android:layout_weight="1"
             android:text="0" />
 
         <Button
-            android:id="@+id/Num1"
-            android:layout_margin="5dp"
+            android:id="@+id/num1"
             android:layout_weight="1"
             android:text="1" />
 
         <Button
-            android:id="@+id/Num2"
-            android:layout_margin="5dp"
+            android:id="@+id/num2"
             android:layout_weight="1"
             android:text="2" />
 
         <Button
-            android:id="@+id/Num3"
-            android:layout_margin="5dp"
+            android:id="@+id/num3"
             android:layout_weight="1"
             android:text="3" />
 
         <Button
-            android:id="@+id/Num4"
-            android:layout_margin="5dp"
+            android:id="@+id/num4"
             android:layout_weight="1"
             android:text="4" />
+
     </TableRow>
 
     <TableRow>
 
         <Button
-            android:id="@+id/Num5"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:text="5" />
+            android:id="@+id/num5"
+            android:layout_weight="5"
+            android:text="0" />
 
         <Button
-            android:id="@+id/Num6"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:text="6" />
+            android:id="@+id/num6"
+            android:layout_weight="6"
+            android:text="1" />
 
         <Button
-            android:id="@+id/Num7"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:text="7" />
+            android:id="@+id/num7"
+            android:layout_weight="7"
+            android:text="2" />
 
         <Button
-            android:id="@+id/Num8"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:text="8" />
+            android:id="@+id/num8"
+            android:layout_weight="8"
+            android:text="3" />
 
         <Button
-            android:id="@+id/Num9"
-            android:layout_margin="5dp"
+            android:id="@+id/num9"
             android:layout_weight="1"
             android:text="9" />
+
     </TableRow>
 
     <Button
-        android:id="@+id/btnAdd"
-        android:layout_margin="5dp"
+        android:id="@+id/plus"
         android:layout_span="5"
-        android:text="더하기" />
+        android:text="plus" />
 
     <Button
-        android:id="@+id/btnSub"
-        android:layout_margin="5dp"
+        android:id="@+id/minus"
         android:layout_span="5"
-        android:text="빼기" />
+        android:text="minus" />
 
     <Button
-        android:id="@+id/btnMul"
-        android:layout_margin="5dp"
+        android:id="@+id/mul"
         android:layout_span="5"
-        android:text="곱하기" />
+        android:text="mul" />
 
     <Button
-        android:id="@+id/btnDiv"
-        android:layout_margin="5dp"
+        android:id="@+id/divide"
         android:layout_span="5"
-        android:text="나누기" />
-
+        android:text="divide" />
     <TextView
-        android:id="@+id/textResult"
-        android:text="연산결과"
-        android:textColor="#ff0000"
-        android:textSize="20dp" />
+        android:id="@+id/result"
+        android:text="result"
+        android:textColor="#ff0000"/>
+
+
 </TableLayout>
