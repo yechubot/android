@@ -1,45 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/edtInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btnShow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="글자 나타내기"/>
-    <Button
-        android:id="@+id/btnHomeOpen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="홈페이지 열기"/>
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
-        <RadioButton
-            android:id="@+id/rdoDog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="강아지"/>
-        <RadioButton
-            android:id="@+id/idoCat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="고양이"/>
-    </RadioGroup>
-    <ImageView
-        android:id="@+id/ivPet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
-</LinearLayout>
+        android:id="@+id/etInput1"
+        android:hint="숫자를 입력하세요"
+        android:inputType="numberDecimal" />
+    <EditText
+        android:id="@+id/etInput2"
+        android:hint="숫자를 입력하세요"
+        android:inputType="numberDecimal"/>
+    <TableRow>
+        <Button android:id="@+id/Num0" android:text="0" android:layout_weight="1" android:layout_margin="5dp"/>
+        <Button android:id="@+id/Num1" android:text="1" android:layout_weight="1" android:layout_margin="5dp"/>
+        <Button android:id="@+id/Num2" android:text="2" android:layout_weight="1" android:layout_margin="5dp"/>
+        <Button android:id="@+id/Num3" android:text="3" android:layout_weight="1" android:layout_margin="5dp"/>
+        <Button android:id="@+id/Num4" android:text="4" android:layout_weight="1" android:layout_margin="5dp"/>
+    </TableRow>
+    <TableRow>
+        <Button android:id="@+id/Num5" android:text="5" android:layout_weight="1" android:layout_margin="5dp"/>
+        <Button android:id="@+id/Num6" android:text="6" android:layout_weight="1" android:layout_margin="5dp"/>
+        <Button android:id="@+id/Num7" android:text="7" android:layout_weight="1" android:layout_margin="5dp"/>
+        <Button android:id="@+id/Num8" android:text="8" android:layout_weight="1" android:layout_margin="5dp"/>
+        <Button android:id="@+id/Num9" android:text="9" android:layout_weight="1" android:layout_margin="5dp"/>
+    </TableRow>
+
+    <Button android:id="@+id/btnAdd" android:text="더하기" android:layout_span="5" android:layout_margin="5dp"/>
+    <Button android:id="@+id/btnSub" android:text="빼기" android:layout_span="5" android:layout_margin="5dp"/>
+    <Button android:id="@+id/btnMul" android:text="곱하기" android:layout_span="5" android:layout_margin="5dp"/>
+    <Button android:id="@+id/btnDiv" android:text="나누기" android:layout_span="5" android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/textResult"
+        android:textSize="20dp"
+        android:textColor="#ff0000"
+        android:text="연산결과"/>
+</TableLayout>
