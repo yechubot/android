@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     if(etInput1.isFocused()==true){
                         stringNum1 =etInput1.getText().toString()+numButtons[index].getText().toString();
-                        //etInput1.getText().toString()으로 직접 입력한것도 함께 작성되도록함
                         etInput1.setText(stringNum1);
                     }else if(etInput2.isFocused()==true){
                         stringNum2 =etInput2.getText().toString()+numButtons[index].getText().toString();
