@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ResultActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="여기는 메인 화면입니다."
+        android:text="여기는 결과를 보여주는 액티비티(화면)"
         android:textSize="20sp" />
+
     <Button
-        android:id="@+id/btnNewAct"
+        android:id="@+id/btnReturn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="새 화면(activity) 열기"/>
+        android:text="메인으로 돌아가기" />
 </LinearLayout>
