@@ -1,77 +1,166 @@
-package com.example.widgettest;
+package com.example.specialwidgetex;
 
+import androidx.annotation.ColorRes;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.net.Uri;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Editable;
+import android.os.SystemClock;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.CalendarView;
+import android.widget.Chronometer;
+import android.widget.DatePicker;
 import android.widget.RadioButton;
-import android.widget.Toast;
+import android.widget.TextView;
+import android.widget.TimePicker;
 
+import java.util.Date;
 
-public class MainActivity extends AppCompatActivity { // activity 에 관련된 기능 상속받음
-    EditText edtInput; // 선언만 함
-    Button btnTextShow, btnHomeOpen;
-    RadioButton rdoDog, rdoCat;
-    ImageView ivPet;
-    String url; // 밖에 선언-> 전역변수 -> 모든 메서드에서 호출 가능
+public class MainActivity extends AppCompatActivity {
+    Chronometer chrono;
+    RadioButton rdoDate, rdoTime;
+    //    CalendarView calendar;
+    DatePicker datePick;
+    TimePicker time;
+    //    Button btnEnd, btnStart;
+    TextView tvResult;
+    int myYear, myMonth, myDate; // 캘린더 날짜 선택시 변수에 들어가게
+//    GestureDetector detector;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) { // activity 생성 메서드
-        super.onCreate(savedInstanceState); // 부모onCreate 기능 받음
-        setContentView(R.layout.activity_main); // activity 화면 setting , view => 위젯 총칭
-        // 위젯 위치가 Resources-> layout -> activiy_main 이라는 파일에 있다
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        // 위젯과 연결
-        //(EditText)안써도 됨 but 쓰면 명시
-        edtInput = (EditText)findViewById(R.id.edtInput);
-        btnTextShow = (Button)findViewById(R.id.btnTextShow);
-        btnHomeOpen = (Button)findViewById(R.id.btnHomeOpen);
-        rdoDog = (RadioButton)findViewById(R.id.rdoDog);
-        rdoCat = (RadioButton)findViewById(R.id.rdoCat);
-        ivPet = (ImageView)findViewById(R.id.ivPet);
-
-        //editText 글자 입력 후, 버튼 클릭하면 토스트로 보이기
-        btnTextShow.setOnClickListener(new View.OnClickListener() { // Interface OnClickListener 익명 클래스에서 구현
+        chrono = findViewById(R.id.chrono); // 캐스팅하는 순간 연결 -> 시간이 바로 가버림
+        rdoDate = findViewById(R.id.rdoDate);
+        rdoTime = findViewById(R.id.rdoTime);
+        datePick = findViewById(R.id.datePick);
+//        calendar = findViewById(R.id.calendar);
+        time = findViewById(R.id.time);
+/*        btnEnd = findViewById(R.id.btnEnd);
+        btnStart = findViewById(R.id.btnStart);*/
+        tvResult = findViewById(R.id.tvResult);
+     /*   detector = new GestureDetector(this, new GestureDetector.OnGestureListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),edtInput.getText().toString(),Toast.LENGTH_SHORT).show();// toast에 보일 글자를 만드는 메서드
-                //숫자 넣으면 앱 종료됨 string이 아니라서
+            public boolean onDown(MotionEvent e) {
+                return false;
             }
-        });
-        // editText에 홈페이지 주소를 입력 후 , 버튼 클릭하면 브라우저 통해 홈페이지 보이기
-        btnHomeOpen.setOnClickListener(new View.OnClickListener(){
 
             @Override
+            public void onShowPress(MotionEvent e) {
+
+            }
+
+            @Override
+            public boolean onSingleTapUp(MotionEvent e) {
+                return false;
+            }
+
+            @Override
+            public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+                return false;
+            }
+
+            @Override
+            public void onLongPress(MotionEvent e) {
+                chrono.stop();
+                chrono.setTextColor(Color.RED);
+                tvResult.setText(datePick.getYear() + "년" + datePick.getMonth() + "월" + datePick.getDayOfMonth() + "일" + time.getCurrentHour() + "시" + time.getCurrentMinute() + "분에 예약됨");
+                rdoDate.setVisibility(View.INVISIBLE);
+                rdoTime.setVisibility(View.INVISIBLE);
+                datePick.setVisibility(View.INVISIBLE);
+                time.setVisibility(View.INVISIBLE);
+
+            }
+
+            @Override
+            public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+                return false;
+            }
+        });
+*/
+        chrono.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                //http 입력 없이도 url 열리게 만들기
-                url = edtInput.getText().toString();
-                if(!url.substring(0,7).equals("http://")){
-                    url= "http://"+url;
-                }
-                Intent mintent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                startActivity(mintent);
+                chrono.setBase(SystemClock.elapsedRealtime());
+                chrono.start();
+                chrono.setTextColor(Color.BLUE);
+                rdoDate.setVisibility(View.VISIBLE);
+                rdoTime.setVisibility(View.VISIBLE);
 
             }
         });
-        // 강아지/고양이 라디오 버튼을 클릭하면 imageView에 강아지/고양이 보이기
-        rdoDog.setOnClickListener(new View.OnClickListener() {
+/*        btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ivPet.setImageResource(R.drawable.dog);
+                chrono.setBase(SystemClock.elapsedRealtime()); // 예약시작 누를 때마다 chronometer 초기화 명령
+                chrono.start();
+                chrono.setTextColor(Color.BLUE);
+            }
+        });*/
+        rdoDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePick.setVisibility(View.VISIBLE);
+                time.setVisibility(View.INVISIBLE);
+            }
+        });
+        rdoTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePick.setVisibility(View.INVISIBLE);
+                time.setVisibility(View.VISIBLE);
             }
         });
 
-        rdoCat.setOnClickListener(new View.OnClickListener() {
+
+//        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+//            @Override
+//            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {// 찍은 날짜 여기 매개변수(변경 가능)에 들어감 -> 전역변수에 값 넘겨줘야 함
+//                myYear = year;
+//                myMonth = month + 1; // month 가 배열로 만들어짐, 1월이 0부터 시작
+//
+//
+//                myDate = dayOfMonth;
+//            }
+//        });
+
+/*        btnEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ivPet.setImageResource(R.drawable.cat);
+                chrono.stop();
+                chrono.setTextColor(Color.RED);
+                tvResult.setText(myYear+"년"+myMonth+"월"+myDate+"일"+time.getCurrentHour()+"시"+time.getCurrentMinute()+"분에 예약됨");
+            }
+        });*/
+
+/*        tvResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chrono.stop();
+                chrono.setTextColor(Color.RED);
+                tvResult.setText(datePick.getYear() + "년" + datePick.getMonth() + "월" + datePick.getDayOfMonth() + "일" + time.getCurrentHour() + "시" + time.getCurrentMinute() + "분에 예약됨");
+            }
+        });*/
+
+        tvResult.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                chrono.stop();
+                chrono.setTextColor(Color.RED);
+                tvResult.setText(datePick.getYear() + "년" + datePick.getMonth() + "월" + datePick.getDayOfMonth() + "일" + time.getCurrentHour() + "시" + time.getCurrentMinute() + "분에 예약됨");
+                rdoDate.setVisibility(View.INVISIBLE);
+                rdoTime.setVisibility(View.INVISIBLE);
+                datePick.setVisibility(View.INVISIBLE);
+                time.setVisibility(View.INVISIBLE);
+                return true;
             }
         });
+
     }
 }
