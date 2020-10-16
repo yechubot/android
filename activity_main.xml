@@ -1,45 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/edtInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btnShow"
+    <Chronometer
+        android:id="@+id/chrono"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="글자 나타내기"/>
-    <Button
-        android:id="@+id/btnHomeOpen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="홈페이지 열기"/>
+        android:format="예약에 걸린 시간 %s"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="#A1A1A1"/>
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btnStart"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="예약 시작" />-->
+
     <RadioGroup
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_height="wrap_content">
+
         <RadioButton
-            android:id="@+id/rdoDog"
+            android:id="@+id/rdoDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="강아지"/>
+            android:text="날짜 설정"
+            android:visibility="invisible" />
+
         <RadioButton
-            android:id="@+id/idoCat"
+            android:id="@+id/rdoTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="고양이"/>
+            android:text="시간 설정"
+            android:visibility="invisible" />
     </RadioGroup>
-    <ImageView
-        android:id="@+id/ivPet"
-        android:layout_width="wrap_content"
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <!--        <CalendarView-->
+        <!--            android:id="@+id/calendar"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:visibility="visible" />-->
+        <DatePicker
+            android:id="@+id/datePick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:datePickerMode="spinner"
+            android:visibility="invisible" />
+
+        <TimePicker
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:background="#b2ccff">
+
+        <!--        <Button-->
+        <!--            android:id="@+id/btnEnd"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="예약완료" />-->
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#03A9F4"
+            android:gravity="center"
+            android:textSize="20sp"
+          />
+
+    </LinearLayout>
 </LinearLayout>
