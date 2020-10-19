@@ -9,7 +9,7 @@
 
     <AutoCompleteTextView
         android:id="@+id/autoEditView1"
-        android:completionThreshold="2"
+        android:completionThreshold="2"// 자동완성 최소 몇 자리에서 시작? 2개 입력해야 자동완성 뜨는..?
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
