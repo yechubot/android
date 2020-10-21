@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         layout1 = findViewById(R.id.layout1);
         btnBack = findViewById(R.id.btnBack);
         ivCookie = findViewById(R.id.ivCookie);
-        registerForContextMenu(btnBack);
+        registerForContextMenu(btnBack); // context Menu 등록 !!
         registerForContextMenu(ivCookie);
     }
 
