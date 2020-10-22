@@ -66,5 +66,22 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+            end.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("프로그램 종료");
+                builder.setMessage("정말로 종료하시겠습니까?");
+                builder.setPositiveButton("네", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("취소", null);
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
     }
 }
