@@ -1,45 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_weight="1">
 
-    <EditText
-        android:id="@+id/edtInput"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btnShow"
+        android:layout_height="wrap_content" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="글자 나타내기"/>
-    <Button
-        android:id="@+id/btnHomeOpen"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="홈페이지 열기"/>
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
-        <RadioButton
-            android:id="@+id/rdoDog"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="강아지"/>
-        <RadioButton
-            android:id="@+id/idoCat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="고양이"/>
-    </RadioGroup>
-    <ImageView
-        android:id="@+id/ivPet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+            android:text="앱종료" />
+    </LinearLayout>
+
 </LinearLayout>
