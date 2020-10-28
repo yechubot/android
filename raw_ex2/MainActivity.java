@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     img.setImageResource(rdoimgID[index]);
-                    textInt = index+1; // int textInt로 처음에 선언하고 
+                    textInt = index+1; // int textInt로 처음에 선언하고 .. 아니면 아예 titles[index+1]을 String으로 담아서 선언하기..
                 }
             });
         }
