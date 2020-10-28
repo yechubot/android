@@ -102,6 +102,25 @@ public class MainActivity extends AppCompatActivity {
         }
             }
         });
+        
+        /*        //click rdobtn
+        for (int i = 0; i < rdobtn.length; i++) {
+            final int index = i;
+            rdobtn[index].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    img.setImageResource(rdoimgID[index]);
+                    textInt = index+1; // int textInt로 처음에 선언하고 
+                }
+            });
+        }
+        //click result_btn
+        btn_result.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                explain.setText(titles[textInt]);
+            }
+        });*/
 
     }
 }
