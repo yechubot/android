@@ -95,8 +95,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
         for(int i =0; i< rdobtn.length; i++){
-            final int index = i;
-            while(rdobtn[index].isChecked()){
+            while(rdobtn[i].isChecked()){
                 explain.setText(titles[i+1]);
                 break;
             }
