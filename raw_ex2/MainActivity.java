@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             String str = new String(txt);
             titles = str.split("#");
             title.setText(titles[0]);
+            inputS.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
