@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
         btn_delete = findViewById(R.id.btn_delete);
         btn_mkdir = findViewById(R.id.btn_mkdir);
         tvContent = findViewById(R.id.tvContent);
-        //폰 환경에서 절대주소 가져오기
+        //폰 환경에서 절대주소 가져오기, 즉 외부 스토리지 최상위 주소임, 직접 만든 폴더에 접근하고 싶으면 뒤에 폴더명을 추가하면 된다.
         sd_path = Environment.getExternalStorageDirectory().getAbsolutePath();
-        // 만들 폴더 객체 생성
+        // 만들 폴더의 객체를 생성함. 절대경로에다가 만들 폴더 뒤에 붙임
         folder = new File(sd_path + "/new_one");
         // 앱 실행시권한 묻기
         if (Build.VERSION.SDK_INT >= 23) {
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                         Manifest.permission.WRITE_EXTERNAL_STORAGE}, MODE_PRIVATE);
             }
         }
+        //폴더 만드는 버튼 누르면
         btn_mkdir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,12 +52,14 @@ public class MainActivity extends AppCompatActivity {
                 folder.mkdir();
             }
         });
+        //폴더를 삭제하는 버튼을 누르면
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 folder.delete();
             }
         });
+        //sd카드 내용을 읽어올 버튼을 누르면 
         btn_sdCardRead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
