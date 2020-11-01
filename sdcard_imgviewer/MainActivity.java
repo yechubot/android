@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (permission_check == PackageManager.PERMISSION_DENIED) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MODE_PRIVATE);
-            } else { // permission 안된 경우
+            } else {
                 sdcardImgFilter();
             }
         }
