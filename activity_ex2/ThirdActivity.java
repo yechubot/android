@@ -27,8 +27,12 @@ public class ThirdActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case android.R.id.home: // 안드로이드에 있는 메뉴 -> 뒤로가기 버튼을 말함
                 finish();
-                break;
-        }
-        return true;
+                return true;// break;
+            default:
+                return super.onOptionsItemSelected(item);// return true; -> 쌤이 적은 방법.. 아주 큰 차이는 없는 건가 밑의 설명을 보면 아닐 때는 부모 클래스를 호출해야 한다고 하는데
+
+/*            When you successfully handle a menu item, return true.
+             If you don't handle the menu item, you should call the superclass implementation of onOptionsItemSelected()
+             (the default implementation returns false)*/
     }
 }
