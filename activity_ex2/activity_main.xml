@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="여기는 메인화면입니다."
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnNewAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="새 화면 열기" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rdoSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2번째 액티비티"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rdoThird"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3번째 액티비티" />
+    </RadioGroup>
+
+</LinearLayout>
