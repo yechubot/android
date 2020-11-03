@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:stretchColumns="0"
+    tools:context=".ResultActivity">
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_weight="1"
+            android:text="그림1" />
+
+        <RatingBar
+            android:id="@+id/rBar1"
+            style="?android:attr/ratingBarStyleIndicator" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_weight="1"
+            android:text="그림1" />
+
+        <RatingBar
+            android:id="@+id/rBar2"
+            style="?android:attr/ratingBarStyleIndicator" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_weight="1"
+            android:text="그림1" />
+
+        <RatingBar
+            android:id="@+id/rBar3"
+            style="?android:attr/ratingBarStyleIndicator" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_weight="1"
+            android:text="그림1" />
+
+        <RatingBar
+            android:id="@+id/rBar4"
+            style="?android:attr/ratingBarStyleIndicator" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_weight="1"
+            android:text="그림1" />
+
+        <RatingBar
+            android:id="@+id/rBar5"
+            style="?android:attr/ratingBarStyleIndicator" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv6"
+            android:layout_weight="1"
+            android:text="그림1" />
+
+        <RatingBar
+            android:id="@+id/rBar6"
+            style="?android:attr/ratingBarStyleIndicator" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv7"
+            android:layout_weight="1"
+            android:text="그림1" />
+
+        <RatingBar
+            android:id="@+id/rBar7"
+            style="?android:attr/ratingBarStyleIndicator" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv8"
+            android:layout_weight="1"
+            android:text="그림1" />
+
+        <RatingBar
+            android:id="@+id/rBar8"
+            style="?android:attr/ratingBarStyleIndicator" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv9"
+            android:layout_weight="1"
+            android:text="그림1" />
+
+        <RatingBar
+            android:id="@+id/rBar9"
+            style="?android:attr/ratingBarStyleIndicator" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/btn_return"
+            android:layout_span="2"
+            android:text="돌아가기" />
+    </TableRow>
+</TableLayout>
