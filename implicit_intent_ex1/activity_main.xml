@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnDial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="전화걸기" />
+
+    <Button
+        android:id="@+id/btnHp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="홈페이지 열기" />
+
+    <Button
+        android:id="@+id/btnMap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="구글 맵 열기" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="구글 검색하기" />
+
+    <Button
+        android:id="@+id/btnSound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="음성인식" />
+
+    <Button
+        android:id="@+id/btnSms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="문자 보내기" />
+
+    <Button
+        android:id="@+id/btnPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="사진찍기" />
+
+    <Button
+        android:id="@+id/btnPhotoView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="사진찍고 보기" />
+
+    <ImageView
+        android:id="@+id/ivPet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
