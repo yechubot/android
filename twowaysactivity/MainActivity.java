@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton plus, minus, mul, div;
     Button btn_cal;
     TextView tv_result;
-    RadioGroup rGroup1; //추가
+  
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         div = findViewById(R.id.div);
         btn_cal = findViewById(R.id.btn_cal);
         tv_result = findViewById(R.id.tv_result);
-        rGroup1 = findViewById(R.id.rGroup1);
+  
 
         btn_cal.setOnClickListener(new View.OnClickListener() {
             @Override
