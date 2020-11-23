@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+
+       <ImageButton
+           android:layout_width="wrap_content"
+           android:id="@+id/idZoomIn"
+           android:src="@drawable/zoom_in"
+           android:layout_height="wrap_content"/>
+       <ImageButton
+           android:src="@drawable/zoom_out"
+           android:layout_width="wrap_content"
+           android:id="@+id/idZoomOut"
+           android:layout_height="wrap_content"/>
+<!--       <ImageButton
+           android:src="@drawable/gray"
+           android:layout_width="wrap_content"
+           android:id="@+id/gray"
+           android:layout_height="wrap_content"/>-->
+       <ImageButton
+           android:src="@drawable/bright"
+           android:layout_width="wrap_content"
+           android:id="@+id/bright"
+           android:layout_height="wrap_content"/>
+       <ImageButton
+           android:src="@drawable/dark"
+           android:layout_width="wrap_content"
+           android:id="@+id/dark"
+           android:layout_height="wrap_content"/>
+       <ImageButton
+           android:src="@drawable/rotate"
+           android:layout_width="wrap_content"
+           android:id="@+id/rotate"
+           android:layout_height="wrap_content"/>
+       <ImageButton
+           android:src="@drawable/blur"
+           android:layout_width="wrap_content"
+           android:id="@+id/blur"
+           android:layout_height="wrap_content"/>
+       <ImageButton
+           android:src="@drawable/embos"
+           android:layout_width="wrap_content"
+           android:id="@+id/embos"
+           android:layout_height="wrap_content"/>
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <com.example.miniphotoshop.MyGraphicView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/myGV"/>
+    </LinearLayout>
+
+</LinearLayout>
